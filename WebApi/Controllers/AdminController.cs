@@ -191,7 +191,7 @@ namespace WebApi.Controllers
             return Ok(new APIResponseModel<bool> { Data = res, Msg = Msg});
         }
 
-        [Route("GetPropertyDetails/{PropertyId:long}")]
+        [Route("GetPropertyDetails/{PropertyId:long?}")]
         [HttpGet]
         public IHttpActionResult GetPropertyDetails([FromUri]long PropertyId = 0)
         {
