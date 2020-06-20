@@ -1,5 +1,4 @@
-﻿using Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Core.Lookup
 {
-    [Table("LookUp")]
-    public class LookupSnapshot : Entity, IValidatableObject
+    [Table("vw_LookUp")]
+    public class LookUpViewSnapshot
     {
         #region Constructor
-        public LookupSnapshot ()
+        public LookUpViewSnapshot()
         {
 
         }
@@ -22,21 +21,15 @@ namespace Core.Lookup
         #region Property   
         [Key]
         [Column("LookUpId")]
-        public long LookUpId { get; set; }
+        public long LookUpId { get; set; }        
+        [Column("LookUpTypeId")]
+        public long LookUpTypeId { get; set; }
+        [Column("LookUpType")]
+        public string LookUpType { get; set; }
         [Column("LookUp")]
         public string LookUp { get; set; }
         [Column("LookupDescription")]
         public string LookupDescription { get; set; }
-        [Column("LookUpTypeId")]
-        public long LookUpTypeId { get; set; }
-        [Column("CreatedBy")]
-        public long CreatedBy { get; set; }
-        [Column("CreatedOn")]
-        public DateTime CreatedOn { get; set; }
-        [Column("LastUpdatedBy")]
-        public long LastUpdatedBy { get; set; }
-        [Column("LastUpdatedOn")]
-        public DateTime LastUpdatedOn { get; set; }
         #endregion Property
 
         #region Public Methods

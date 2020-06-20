@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using DAL.Contract;
 using Core;
 using Core.Lookup;
+using Core.Property;
 
 namespace DAL
 {
@@ -36,6 +37,15 @@ namespace DAL
         IDbSet<UserSnapshot> _userSnapshot { get; set; }
         IDbSet<LookupSnapshot> _lookupSnapshot { get; set; }
         IDbSet<LookupTypeSnapshot> _lookuptypeSnapshot { get; set; }
+        IDbSet<LookUpViewSnapshot> _lookupviewSnapshot { get; set; }
+        IDbSet<PropertyUserSnapshot> _propertyUserSnapshot { get; set; }
+        IDbSet<PropertySnapshot> _propertySnapshot { get; set; }
+        IDbSet<PropertyFacilitySnapshot> _propertyFacilitySnapshot { get; set; }
+        IDbSet<PropertyDetailsViewSnapshot> _propertyDetailsViewSnapshot { get; set; }
+        IDbSet<RoomSnapshot> _roomSnapshot { get; set; }
+        IDbSet<RoomFacilitySnapshot> _roomFacilitySnapshot { get; set; }
+        IDbSet<RoomTariffSnapshot> _roomTariffSnapshot { get; set; }
+        IDbSet<RoomDetailsViewSnapshot> _roomDetailsViewSnapshot { get; set; }
 
         #endregion
 

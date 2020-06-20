@@ -19,6 +19,8 @@ using System.Web;
 using System;
 using Repository.LookUp;
 using Core.Lookup;
+using Core.Property;
+using Repository.Property;
 
 namespace Dependency
 {
@@ -37,7 +39,17 @@ namespace Dependency
                   Component.For<IEntityTranslatorService, EntityTranslatorService>().ImplementedBy<EntityTranslatorService>().LifestyleSingleton(),
                   Component.For<ILookupTypeRepository, LookupTypeRepository>().ImplementedBy<LookupTypeRepository>().LifestyleTransient(),
                   Component.For<ILookupRepository, LookupRepository>().ImplementedBy<LookupRepository>().LifestyleTransient(),
-                  Component.For<IUserRepository, UserRepository>().ImplementedBy<UserRepository>().LifestyleTransient()
+                  Component.For<ILookupViewRepository, LookupViewRepository>().ImplementedBy<LookupViewRepository>().LifestyleTransient(),
+                  Component.For<IUserRepository, UserRepository>().ImplementedBy<UserRepository>().LifestyleTransient(),
+                  Component.For<IPropertyUserRepository, PropertyUserRepository>().ImplementedBy<PropertyUserRepository>().LifestyleTransient(),
+                  Component.For<IPropertyRepository, PropertyRepository>().ImplementedBy<PropertyRepository>().LifestyleTransient(),
+                  Component.For<IPropertyFacilityRepository, PropertyFacilityRepository>().ImplementedBy<PropertyFacilityRepository>().LifestyleTransient(),
+                  Component.For<IPropertyDetailsViewRepository, PropertyDetailsViewRepository>().ImplementedBy<PropertyDetailsViewRepository>().LifestyleTransient(),
+                  Component.For<IRoomRepository, RoomRepository>().ImplementedBy<RoomRepository>().LifestyleTransient(),
+                  Component.For<IRoomFacilityRepository, RoomFacilityRepository>().ImplementedBy<RoomFacilityRepository>().LifestyleTransient(),
+                  Component.For<IRoomTariffRepository, RoomTariffRepository>().ImplementedBy<RoomTariffRepository>().LifestyleTransient(),
+                  Component.For<IRoomDetailsViewRepository, RoomDetailsViewRepository>().ImplementedBy<RoomDetailsViewRepository>().LifestyleTransient()
+
                 );
             //.AddFacility<LoggingFacility>(f => f.UseLog4Net());
 

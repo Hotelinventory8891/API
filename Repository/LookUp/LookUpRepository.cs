@@ -108,4 +108,53 @@ namespace Repository.LookUp
         }
 
     }
+    public class LookupViewRepository : Repository<LookUpViewSnapshot>, ILookupViewRepository
+    {
+        #region Properties
+
+        private ILogger _tracer;
+
+        #endregion Properties
+
+
+        #region Constructor
+        public LookupViewRepository(UnitOfWork unitOfWork, ILogger Tracer)
+            : base(unitOfWork)
+        {
+            if (Tracer == null)
+                throw new ArgumentNullException("Tracer");
+            _tracer = Tracer;
+        }
+
+        #endregion
+
+        public IEnumerable<LookUpViewSnapshot> GetFilteredLookupViewDetails(Expression<Func<LookUpViewSnapshot, bool>> expr1)
+        {
+            IEnumerable<LookUpViewSnapshot> result = null;
+            try
+            {
+                result = this.GetFiltered(expr1);
+            }
+            catch (Exception ex)
+            {
+                _tracer.LogError("Reading Filtered LookupViewDetails", ex);
+            }
+            return result;
+        }
+
+        public IEnumerable<LookUpViewSnapshot> GetAllLookupViewDetails()
+        {
+            IEnumerable<LookUpViewSnapshot> result = null;
+            try
+            {
+                result = this.GetAll();
+            }
+            catch (Exception ex)
+            {
+                _tracer.LogError("Reading LookupViewDetails", ex);
+            }
+            return result;
+        }
+
+    }
 }

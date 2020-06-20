@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Lookup
+namespace Core.Property
 {
-    [Table("LookUp")]
-    public class LookupSnapshot : Entity, IValidatableObject
+    [Table("Room_Per_Date_Tariff")]
+    public class RoomTariffSnapshot : Entity, IValidatableObject
     {
         #region Constructor
-        public LookupSnapshot ()
+        public RoomTariffSnapshot()
         {
 
         }
@@ -21,14 +21,20 @@ namespace Core.Lookup
 
         #region Property   
         [Key]
-        [Column("LookUpId")]
-        public long LookUpId { get; set; }
-        [Column("LookUp")]
-        public string LookUp { get; set; }
-        [Column("LookupDescription")]
-        public string LookupDescription { get; set; }
-        [Column("LookUpTypeId")]
-        public long LookUpTypeId { get; set; }
+        [Column("Id")]
+        public long Id { get; set; }
+        [Column("RoomId")]
+        public long RoomId { get; set; }
+        [Column("StartDate")]
+        public DateTime StartDate { get; set; }
+        [Column("EndDate")]
+        public DateTime EndDate { get; set; }
+        [Column("Tariff")]
+        public decimal Tariff { get; set; }
+        [Column("Discount_Percent")]
+        public decimal Discount_Percent { get; set; }
+        [Column("IsDefault")]
+        public bool IsDefault { get; set; }
         [Column("CreatedBy")]
         public long CreatedBy { get; set; }
         [Column("CreatedOn")]

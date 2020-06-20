@@ -60,6 +60,14 @@
   <ItemGroup>
     <Compile Include="LookUp\LookupRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property\PropertyDetailsViewRepository.cs" />
+    <Compile Include="Property\PropertyFacilityRepository.cs" />
+    <Compile Include="Property\PropertyRepository.cs" />
+    <Compile Include="Property\PropertyUserRepository.cs" />
+    <Compile Include="Property\RoomDetailsViewRepository.cs" />
+    <Compile Include="Property\RoomFacilityRepository.cs" />
+    <Compile Include="Property\RoomRepository.cs" />
+    <Compile Include="Property\RoomTariffRepository.cs" />
     <Compile Include="User\UserDetailsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +88,7 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

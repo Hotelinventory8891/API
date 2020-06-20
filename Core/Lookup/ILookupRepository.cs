@@ -17,4 +17,9 @@ namespace Core.Lookup
         IEnumerable<LookupTypeSnapshot> GetFilteredLookupTypeDetails(Expression<Func<LookupTypeSnapshot, bool>> expr1);
         IEnumerable<LookupTypeSnapshot> GetAllLookupTypeDetails();
     }
+    public interface ILookupViewRepository
+    {
+        IEnumerable<LookUpViewSnapshot> GetFilteredLookupViewDetails(Expression<Func<LookUpViewSnapshot, bool>> expr1);
+        IEnumerable<LookUpViewSnapshot> GetAllLookupViewDetails();
+    }
 }

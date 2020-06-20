@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Lookup
+namespace Core.Property
 {
-    [Table("LookUp")]
-    public class LookupSnapshot : Entity, IValidatableObject
+    [Table("PropertyUser")]
+    public class PropertyUserSnapshot : Entity, IValidatableObject
     {
         #region Constructor
-        public LookupSnapshot ()
+        public PropertyUserSnapshot()
         {
 
         }
@@ -21,14 +21,14 @@ namespace Core.Lookup
 
         #region Property   
         [Key]
-        [Column("LookUpId")]
-        public long LookUpId { get; set; }
-        [Column("LookUp")]
-        public string LookUp { get; set; }
-        [Column("LookupDescription")]
-        public string LookupDescription { get; set; }
-        [Column("LookUpTypeId")]
-        public long LookUpTypeId { get; set; }
+        [Column("Id")]
+        public long Id { get; set; }
+        [Column("PropertyId")]
+        public long PropertyId { get; set; }
+        [Column("OwnerId")]
+        public long OwnerId { get; set; }
+        [Column("IsActive")]
+        public bool IsActive { get; set; }
         [Column("CreatedBy")]
         public long CreatedBy { get; set; }
         [Column("CreatedOn")]
@@ -38,7 +38,6 @@ namespace Core.Lookup
         [Column("LastUpdatedOn")]
         public DateTime LastUpdatedOn { get; set; }
         #endregion Property
-
         #region Public Methods
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
